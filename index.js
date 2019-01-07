@@ -9,6 +9,7 @@ const flash = require('connect-flash')
 const session = require('express-session')
 
 // import controllers
+const userController = require('./controllers/users')
 
 // middleware config
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -34,6 +35,12 @@ app.use((req, res, next) => {
   res.locals.title = 'Premier League Predictor'
   console.log(req.session)
   next()
+})
+
+app.use('/users', userController)
+
+app.get('/', (req, res) => {
+  res.render('home')
 })
 
 app.set('port', process.env.PORT || 4000)

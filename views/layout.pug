@@ -1,0 +1,15 @@
+html
+    head
+        title= title
+        //- stylesheets
+        //- font awesome
+        block head
+    body
+        header
+        main
+            if (message && message.length > 0)
+                div #{message}
+            block content
+        footer
+
+        block script
