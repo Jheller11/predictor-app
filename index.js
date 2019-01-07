@@ -33,7 +33,6 @@ app.set('view engine', 'pug')
 app.use((req, res, next) => {
   res.locals.user = req.user
   res.locals.title = 'Premier League Predictor'
-  console.log(req.session)
   next()
 })
 
@@ -41,6 +40,10 @@ app.use('/users', userController)
 
 app.get('/', (req, res) => {
   res.render('home')
+})
+
+app.get('/*', (req, res) => {
+  res.render('404')
 })
 
 app.set('port', process.env.PORT || 4000)
