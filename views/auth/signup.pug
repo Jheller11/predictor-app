@@ -1,4 +1,18 @@
 extends ../layout.pug
 
 block content
-    div signup page
+    div
+        h4 Register:
+        form(method="POST" action='/users/signup')
+            div
+                label(for='email') Email Address:
+                input(type='text' placeholder='jdoe@gmail.com' name='email' required)
+            div
+                label(for='password') Password:
+                input(type='password' name='password' required)
+            div
+                label(for='displayName') Display Name:
+                input(type='text' placeholder='eg. John D.' name='displayName' required)
+            button(type="submit") Register
+        div Already have an account? 
+            a(href="/users/login") Sign in here.

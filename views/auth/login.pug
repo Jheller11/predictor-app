@@ -1,4 +1,15 @@
 extends ../layout.pug
 
 block content
-    div login page
+    div
+        h4 Log In:
+        form(method="POST" action='/users/login')
+            div
+                label(for='email') Email Address:
+                input(type='text' placeholder='jdoe@gmail.com' name='email' required)
+            div
+                label(for='password') Password:
+                input(type='password' name='password' required)
+            button(type="submit") Log In
+        div Don't have an account yet? 
+            a(href="/users/signup") Create one here.
