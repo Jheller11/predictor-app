@@ -32,7 +32,6 @@ const refreshGames = () => {
       })
       .then(() => {
         console.log('done')
-        mongoose.connection.close()
       })
   )
 }

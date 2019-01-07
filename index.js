@@ -10,6 +10,11 @@ const session = require('express-session')
 
 // import controllers
 
+// middleware config
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(override('_method'))
+app.use(cookieParser())
+
 // serve static files
 app.use(express.static('public'))
 
