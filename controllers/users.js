@@ -5,11 +5,11 @@ require('../config/passport')(passport)
 const isLoggedIn = require('../config/utils').isLoggedIn
 
 router.get('/login', (req, res) => {
-  res.render('login', { message: req.flash('loginMessage') })
+  res.render('auth/login', { message: req.flash('loginMessage') })
 })
 
 router.get('/signup', (req, res) => {
-  res.render('signup', { message: req.flash('signupMessage') })
+  res.render('auth/signup', { message: req.flash('signupMessage') })
 })
 
 router.get('/profile', isLoggedIn, (req, res) => {
