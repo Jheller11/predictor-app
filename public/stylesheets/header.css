@@ -1,0 +1,30 @@
+header {
+  min-height: 3em;
+  padding: 8px;
+  border-bottom: 1px solid #312f2f;
+  background-color: #93acb5;
+}
+
+a.nav-link {
+  text-decoration: none;
+  padding: 0 2px;
+  color: #312f2f;
+  border-bottom: 1px solid transparent;
+}
+
+a.nav-link:hover {
+  border-bottom: 1px solid #fc440f;
+  color: #fdfdfd;
+}
+
+nav {
+  line-height: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.site-title {
+  text-align: center;
+  font-size: 150%;
+}

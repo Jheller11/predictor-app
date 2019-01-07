@@ -10,6 +10,7 @@ const session = require('express-session')
 
 // import controllers
 const userController = require('./controllers/users')
+const gameController = require('./controllers/games')
 
 // middleware config
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -36,7 +37,9 @@ app.use((req, res, next) => {
   next()
 })
 
+// controllers
 app.use('/users', userController)
+app.use('/games', gameController)
 
 app.get('/', (req, res) => {
   res.render('home')
