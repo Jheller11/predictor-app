@@ -1,0 +1,31 @@
+{
+  "id": 233028,
+  "season": {
+    "id": 151,
+    "startDate": "2018-08-10",
+    "endDate": "2019-05-12",
+    "currentMatchday": 21
+  },
+  "utcDate": "2018-08-10T19:00:00Z",
+  "status": "FINISHED",
+  "matchday": 1,
+  "stage": "REGULAR_SEASON",
+  "group": "Regular Season",
+  "lastUpdated": "2018-12-09T20:33:54Z",
+  "score": {
+    "winner": "HOME_TEAM",
+    "duration": "REGULAR",
+    "fullTime": { "homeTeam": 2, "awayTeam": 1 },
+    "halfTime": { "homeTeam": 1, "awayTeam": 0 },
+    "extraTime": { "homeTeam": null, "awayTeam": null },
+    "penalties": { "homeTeam": null, "awayTeam": null }
+  },
+  "homeTeam": { "id": 66, "name": "Manchester United FC" },
+  "awayTeam": { "id": 338, "name": "Leicester City FC" },
+  "referees": [
+    { "id": 11610, "name": "Andre Marriner", "nationality": null },
+    { "id": 11611, "name": "Scott Ledger", "nationality": null },
+    { "id": 11504, "name": "Simon Long", "nationality": null },
+    { "id": 11580, "name": "Anthony Taylor", "nationality": null }
+  ]
+}
