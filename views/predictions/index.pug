@@ -1,7 +1,7 @@
 extends ../layout.pug
 
 block content
-    h2 Matchday #{games[0].matchday} Predictions
+    h4 Matchday #{games[0].matchday} Predictions
     h4 (logged in as #{user.local.displayName})
     form(method="POST" action='/predictions')
         each game in games

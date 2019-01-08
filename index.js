@@ -8,6 +8,7 @@ const passport = require('passport')
 const flash = require('connect-flash')
 const session = require('express-session')
 const helmet = require('helmet')
+const compression = require('compression')
 
 // import controllers
 const userController = require('./controllers/users')
@@ -18,6 +19,9 @@ const predictionController = require('./controllers/predictions')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(override('_method'))
 app.use(cookieParser())
+
+// compress responses
+app.use(compression())
 
 // express security middleware
 app.use(helmet())
