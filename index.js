@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser')
 const passport = require('passport')
 const flash = require('connect-flash')
 const session = require('express-session')
+const helmet = require('helmet')
 
 // import controllers
 const userController = require('./controllers/users')
@@ -17,6 +18,9 @@ const predictionController = require('./controllers/predictions')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(override('_method'))
 app.use(cookieParser())
+
+// express security middleware
+app.use(helmet())
 
 // serve static files
 app.use(express.static('public'))
