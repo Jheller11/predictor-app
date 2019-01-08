@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block content
+    h2 Matchday #{games[0].matchday} Predictions
+    h4 (logged in as #{user.local.displayName})
+    each game in games
+        div
+            h4 #{game.awayTeam.name} at #{game.homeTeam.name}
+            - let d = new Date(game.date)
+            - let year = d.getFullYear()
+            - let month = d.getMonth() + 1
+            - let date = d.getDate()
+            - let hour = d.getHours()
+            - let minutes = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes()
+            p #{month}/#{date}/#{year} --- #{hour}:#{minutes}
