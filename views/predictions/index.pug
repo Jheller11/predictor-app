@@ -3,13 +3,23 @@ extends ../layout.pug
 block content
     h2 Matchday #{games[0].matchday} Predictions
     h4 (logged in as #{user.local.displayName})
-    each game in games
-        div
-            h4 #{game.awayTeam.name} at #{game.homeTeam.name}
-            - let d = new Date(game.date)
-            - let year = d.getFullYear()
-            - let month = d.getMonth() + 1
-            - let date = d.getDate()
-            - let hour = d.getHours()
-            - let minutes = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes()
-            p #{month}/#{date}/#{year} --- #{hour}:#{minutes}
+    form(method="POST" action='/predictions')
+        each game in games
+            div
+                label(for='awayTeam') #{game.awayTeam.name} 
+                input(type="number" name="awayTeam" required min='0' max='20' value='0')
+                p at
+                label(for='homeTeam')  #{game.homeTeam.name}
+                input(type="number" name="homeTeam" required min='0' max='20' value='0')
+                input(type="hidden" name="gameId" value=`${game.gameId}`)
+            
+                - let d = new Date(game.date)
+                - let year = d.getFullYear()
+                - let month = d.getMonth() + 1
+                - let date = d.getDate()
+                - let hour = d.getHours()
+                - let minutes = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes()
+                p #{month}/#{date}/#{year} --- #{hour}:#{minutes}
+        input(type="hidden" name="userId" value=`${user.id}`)
+        input(type="hidden" name="matchday" value=`${games[0].matchday}`)          
+        button(type='submit') Submit Predictions

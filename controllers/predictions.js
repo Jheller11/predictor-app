@@ -11,4 +11,25 @@ router.get('/', isLoggedIn, (req, res) => {
   })
 })
 
+router.post('/', isLoggedIn, (req, res) => {
+  let gamePredictions = []
+  for (let i = 0; i < 10; i++) {
+    let newGame = {
+      gameId: req.body.gameId[i],
+      score: {
+        awayTeam: req.body.awayTeam[i],
+        homeTeam: req.body.homeTeam[i]
+      }
+    }
+    gamePredictions.push(newGame)
+  }
+  Prediction.create({
+    userId: req.body.userId,
+    predictions: gamePredictions,
+    matchday: req.body.matchday
+  }).then(() => {
+    res.render('home')
+  })
+})
+
 module.exports = router
