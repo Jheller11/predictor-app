@@ -4,6 +4,7 @@ html
         //- stylesheets
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous")
         link(rel="stylesheet" href="/stylesheets/colors.css")
+        link(rel="stylesheet" href="/stylesheets/main.css")
         //- font awesome
         block head
     body.bg-light
@@ -16,7 +17,7 @@ html
                 li.nav-item
                     a.nav-link.text-orange(href="/predictions") Make Predictions
                 li.nav-item
-                    a.nav-link.text-orange(href="/games/22") View Scores
+                    a.nav-link.text-orange(href="/games") View Scores
                 if (!user)
                     li.nav-item
                         a.nav-link.text-orange(href="/users/login") Log In
@@ -28,15 +29,16 @@ html
                     li.nav-item
                         a.nav-link.text-orange(href="/users/logout") Logout
 
-        main
+        main.p-2
             if (message && message.length > 0)
                 .alert.alert-warning(role='alert') #{message}
             block content
 
-        footer.container
-            .row 
-                .col Created by Jeff Heller
-                .col 
-                    a(href="mailto:heller.jeffrey@gmail.com") heller.jeffrey@gmail.com
+        footer.bg-nickel.text-powder
+            .container
+                .row 
+                    .col Created by Jeff Heller
+                    .col 
+                        a.text-powder(href="mailto:heller.jeffrey@gmail.com") heller.jeffrey@gmail.com
 
         block script

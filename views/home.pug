@@ -1,5 +1,34 @@
 extends layout.pug
 
 block content
-    div
-        p welcome page
+    .card.mb-2
+        .card-body
+            h5.card-title.text-orange Welcome!
+            p.card-text Welcome to the Premier League Predictor game!  
+    .card
+        .card-body
+            h5.card-title.text-orange About:
+            h6.card-subtitle.mb-2 How to play:
+            ol.card-text
+                li
+                    a(href='/users/login') Log in 
+                    span or 
+                    a(href='/users/signup') create an account 
+                    span to start making your predictions.
+                li
+                    span View upcoming matches.
+                li
+                    span Check back after each matchday to see your score and check the leaderboards.
+
+            h6.card-subtitle.mb-2 Rules:
+            ol.card-text
+                li One entry per week per user.
+                li Highest point total wins.
+                li Correct results are worth 10 points.
+                li Correct scores are worth 50 points.
+
+            h6.card-subtitle.mb-2 Help:
+            ol.card-text
+                li I forgot my password.
+                li I forgot to submit my picks.
+                li I have another problem.

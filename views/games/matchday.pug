@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block content
+    h4 Matchday #{games[0].matchday}
+    each game in games
+        div
+            div #{game.awayTeam.name}: #{game.awayTeam.score} 
+            div #{game.homeTeam.name}: #{game.homeTeam.score}
+            - let d = new Date(game.date)
+            - let year = d.getFullYear()
+            - let month = d.getMonth() + 1
+            - let date = d.getDate()
+            - let hour = d.getHours()
+            - let minutes = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes()
+            p #{month}/#{date}/#{year} --- #{hour}:#{minutes}

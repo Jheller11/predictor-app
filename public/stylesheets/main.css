@@ -1,0 +1,9 @@
+/* general css rules */
+
+main {
+  min-height: 500px;
+}
+
+footer {
+  min-height: 80px;
+}

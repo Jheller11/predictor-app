@@ -1,15 +1,11 @@
 extends ../layout.pug
 
 block content
-    h4 Matchday #{games[0].matchday}
-    each game in games
-        div
-            div #{game.awayTeam.name}: #{game.awayTeam.score} 
-            div #{game.homeTeam.name}: #{game.homeTeam.score}
-            - let d = new Date(game.date)
-            - let year = d.getFullYear()
-            - let month = d.getMonth() + 1
-            - let date = d.getDate()
-            - let hour = d.getHours()
-            - let minutes = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes()
-            p #{month}/#{date}/#{year} --- #{hour}:#{minutes}
+    .card
+        .card-body
+            h5.card-title Select a week:
+            h6.card-subtitle.text-muted Scores are available for all completed matches.  Select an upcoming week to view matches and kickoff times.
+            ul
+                each _, i in Array(38)
+                    li
+                        a(href=`/games/${i + 1}`) Matchday #{i + 1} 
