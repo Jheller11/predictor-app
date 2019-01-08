@@ -2,7 +2,7 @@ extends layout.pug
 
 block content
     if (error)
-        div Error: #{error}
-        div Please try again.
+        .alert.alert-danger(role='alert') Error: #{error}
+        .alert.alert-danger(role='alert') Please try again.
     else
-        div Error: Unknown error. Please try again.
+        .alert.alert-danger(role='alert') Error: Unknown error. Please try again.

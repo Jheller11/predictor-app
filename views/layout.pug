@@ -30,7 +30,7 @@ html
 
         main
             if (message && message.length > 0)
-                div #{message}
+                .alert.alert-warning(role='alert') #{message}
             block content
 
         footer.container
