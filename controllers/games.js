@@ -3,8 +3,8 @@ const router = express.Router()
 const isLoggedIn = require('../config/utils').isLoggedIn
 const Game = require('../models/Game')
 
-router.get('/', isLoggedIn, (req, res) => {
-  let currentWeek = 22
+router.get('/:matchday', (req, res) => {
+  let currentWeek = req.params.matchday
   Game.find({ matchday: currentWeek })
     .then(games => {
       res.render('games/index', { games: games })

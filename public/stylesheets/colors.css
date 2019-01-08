@@ -1,0 +1,33 @@
+/* add custom color scheme in same style as bootstrap classes */
+
+.bg-orange {
+  background-color: #fc440f;
+}
+
+.bg-powder {
+  background-color: #fdfdfd;
+}
+
+.bg-nickel {
+  background-color: #6c756b;
+}
+
+.bg-jet {
+  background-color: #312f2f;
+}
+
+.text-orange {
+  color: #fc440f;
+}
+
+.text-powder {
+  color: #fdfdfd;
+}
+
+.text-nickel {
+  color: #6c756b;
+}
+
+.text-jet {
+  color: #312f2f;
+}

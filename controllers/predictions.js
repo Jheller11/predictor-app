@@ -28,7 +28,7 @@ router.post('/', isLoggedIn, (req, res) => {
     predictions: gamePredictions,
     matchday: req.body.matchday
   }).then(() => {
-    res.render('home')
+    res.render('predictions/success')
   })
 })
 

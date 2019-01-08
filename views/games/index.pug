@@ -4,7 +4,8 @@ block content
     h2 Matchday #{games[0].matchday}
     each game in games
         div
-            h4 #{game.awayTeam.name} at #{game.homeTeam.name}
+            div #{game.awayTeam.name}: #{game.awayTeam.score} 
+            div #{game.homeTeam.name}: #{game.homeTeam.score}
             - let d = new Date(game.date)
             - let year = d.getFullYear()
             - let month = d.getMonth() + 1

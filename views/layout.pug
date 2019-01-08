@@ -2,24 +2,31 @@ html
     head
         title= title
         //- stylesheets
-        link(rel="stylesheet" type="text/css" href="/stylesheets/reset.css")
-        link(rel="stylesheet" type="text/css" href="/stylesheets/main.css")
-        link(rel="stylesheet" type="text/css" href="/stylesheets/header.css")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous")
+        link(rel="stylesheet" href="/stylesheets/colors.css")
         //- font awesome
         block head
-    body
-        header
-            h1.site-title Premier League Predictor
-            nav
-                a.nav-link(href="/") Home
-                a.nav-link(href="/predictions") Make Predictions
-                a.nav-link(href="/games") View Scores
+    body.bg-light
+        header.bg-jet.text-powder
+            .navbar
+                a.navbar-brand.text-powder(href='/') Premier League Predictor
+            ul.nav
+                li.nav-item
+                    a.nav-link.text-orange(href="/") Home
+                li.nav-item
+                    a.nav-link.text-orange(href="/predictions") Make Predictions
+                li.nav-item
+                    a.nav-link.text-orange(href="/games/22") View Scores
                 if (!user)
-                    a.nav-link(href="/users/login") Log In
-                    a.nav-link(href="/users/signup") Create Account
+                    li.nav-item
+                        a.nav-link.text-orange(href="/users/login") Log In
+                    li.nav-item
+                        a.nav-link.text-orange(href="/users/signup") Create Account
                 else
-                    a.nav-link(href="/users/profile") Profile
-                    a.nav-link(href="/users/logout") Logout
+                    li.nav-item
+                        a.nav-link.text-orange(href="/users/profile") Profile
+                    li.nav-item
+                        a.nav-link.text-orange(href="/users/logout") Logout
 
         main
             if (message && message.length > 0)
