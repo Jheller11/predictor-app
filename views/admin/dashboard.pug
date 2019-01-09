@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block content
+    .card
+        .card-body
+            h5.card-title.text-orange Site Admin Dashboard
+            a.text-jet(href='/admin/users') View Users
+            a.text-jet(href='/admin/refreshgames') Refresh Games
+            a.text.jet(href='/admin/issues') View Issues
+
+            form(method="POST" action='/admin/update_scores')
+                .form-group
+                    label(for='matchday')  Select Matchday:
+                    input.form-control(type="number" name="matchday" required min='1' max='38' value='1')
+                    small.form-text.text-muted Select a matchday. Submitting this form will update all users scores for a given matchday. (update games first)
+                button.btn.btn-secondary(type="submit") Update Scores

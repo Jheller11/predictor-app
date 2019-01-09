@@ -1,6 +1,17 @@
 const mongoose = require('../db/connection.js')
 const bcrypt = require('bcrypt-nodejs')
 
+const scoreSchema = new mongoose.Schema({
+  matchday: {
+    type: Number,
+    required: true
+  },
+  score: {
+    type: Number,
+    required: true
+  }
+})
+
 const userSchema = new mongoose.Schema({
   local: {
     email: {
@@ -15,7 +26,13 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: true,
       unique: true
-    }
+    },
+    admin: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
+    scores: [scoreSchema]
   }
 })
 

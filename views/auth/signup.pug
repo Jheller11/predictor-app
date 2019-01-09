@@ -10,10 +10,12 @@ block content
                     input.form-control(type='text' placeholder='jdoe@gmail.com' name='email' required)
                 .form-group
                     label(for='password') Password:
-                    input.form-control(type='password' name='password' required)
+                    input.form-control(type='password' name='password' minlength='8' required)
+                    small.form-text.text-muted Password must be at least 8 characters.
                 .form-group
                     label(for='displayName') Display Name:
                     input.form-control(type='text' placeholder='eg. John D.' name='displayName' required)
+                    small.form-text.text-muted This name will be used for leaderboards and messages.
                 button.btn.btn-secondary(type="submit") Register
             div Already have an account? 
                 a(href="/users/login") Sign in here.
