@@ -26,14 +26,14 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: true,
       unique: true
-    },
-    admin: {
-      type: Boolean,
-      required: true,
-      default: false
-    },
-    scores: [scoreSchema]
-  }
+    }
+  },
+  admin: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
+  scores: [scoreSchema]
 })
 
 userSchema.methods.generateHash = password => {
