@@ -14,6 +14,7 @@ const compression = require('compression')
 const userController = require('./controllers/users')
 const gameController = require('./controllers/games')
 const predictionController = require('./controllers/predictions')
+const adminController = require('./controllers/admin')
 
 // middleware config
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -50,6 +51,7 @@ app.use((req, res, next) => {
 app.use('/users', userController)
 app.use('/games', gameController)
 app.use('/predictions', predictionController)
+app.use('/admin', adminController)
 
 app.get('/', (req, res) => {
   res.render('home')
