@@ -4,10 +4,16 @@ block content
     .card
         .card-body
             h5.card-title.text-orange Site Admin Dashboard
-            a.text-jet(href='/admin/users') View Users
-            a.text-jet(href='/admin/refreshgames') Refresh Games
-            a.text.jet(href='/admin/issues') View Issues
+            h6.card-subtitle Admin Actions:
+            ul
+                li
+                    a(href='/admin/users') View Users
+                li
+                    a(href='/admin/refreshgames') Refresh Games
+                li
+                    a(href='/admin/issues') View Issues
 
+            h6.card-subtitle Update Scores:
             form(method="POST" action='/admin/update_scores')
                 .form-group
                     label(for='matchday')  Select Matchday:

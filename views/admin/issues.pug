@@ -1,0 +1,26 @@
+extends ../layout.pug
+
+block content
+    .card
+        .card-body
+            h5.card-title Issues
+
+            table.table
+                thead
+                    tr
+                        th(scope='col') #
+                        th(scope='col') Created
+                        th(scope='col') By
+                        th(scope='col') Issue
+                        th(scope='col') Resolved
+                        th(scope='col') Resolution
+                tbody
+                    each issue, i in issues
+                        tr
+                            th(scope='row') #{i + 1}
+                            td #{issue.created}
+                            td #{issue.submittedBy}
+                            td #{issue.issueText}
+                            td #{issue.resolved}
+                            td #{issue.resolvedText}
+                            

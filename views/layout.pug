@@ -13,19 +13,24 @@ html
                 a.navbar-brand.text-powder(href='/') Premier League Predictor
             ul.nav
                 li.nav-item
-                    a.nav-link.text-orange(href="/") Home
+                    a.nav-link.text-orange(href="/") Home 
+                        i.fa.fa-home
                 li.nav-item
                     a.nav-link.text-orange(href="/predictions") Make Predictions
                 li.nav-item
                     a.nav-link.text-orange(href="/games") View Scores
+                if (user && user.admin)
+                    li.nav-item
+                        a.nav-link.text-orange(href='/admin') Admin Dashboard
                 if (!user)
                     li.nav-item
                         a.nav-link.text-orange(href="/users/login") Log In
                     li.nav-item
                         a.nav-link.text-orange(href="/users/signup") Create Account
-                else
+                if (user)
                     li.nav-item
-                        a.nav-link.text-orange(href="/users/profile") Profile
+                        a.nav-link.text-orange(href="/users/profile") #{user.local.displayName} 
+                            i.fa.fa-user
                     li.nav-item
                         a.nav-link.text-orange(href="/users/logout") Logout
 
@@ -34,11 +39,15 @@ html
                 .alert.alert-warning(role='alert') #{message}
             block content
 
-        footer.bg-nickel.text-powder
-            .container
-                .row 
-                    .col Created by Jeff Heller
-                    .col 
-                        a.text-powder(href="mailto:heller.jeffrey@gmail.com") heller.jeffrey@gmail.com
+        footer.text-powder
+            .container.p-2
+                .row
+                    .col-sm 
+                        small Created by Jeffrey Heller
+                            br
+                            a.text-powder(href='mailto:heller.jeffrey@gmail.com') heller.jeffrey@gmail.com
+                    .col-sm 
+                    .col-sm 
+
 
         block script

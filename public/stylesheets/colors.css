@@ -31,3 +31,7 @@
 .text-jet {
   color: #312f2f;
 }
+
+.border-orange-focus:focus {
+  border: #fc440f 1px solid;
+}

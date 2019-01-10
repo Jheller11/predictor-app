@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+    .card
+        .card-body
+            h5.card-title Report an issue:
+            form(method='POST' action='/issues/new')
+                .form-group
+                    label(for='issueText') Issue:
+                    input.border-orange-focus.form-control(type='textarea' name='issueText' minlength='1' required)
+                    small.form-text.text-muted Please describe the issue in detail.
+                button.btn.btn-secondary(type="submit") Submit
+                

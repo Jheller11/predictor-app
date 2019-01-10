@@ -33,7 +33,11 @@ const userSchema = new mongoose.Schema({
     required: true,
     default: false
   },
-  scores: [scoreSchema]
+  scores: [scoreSchema],
+  count: {
+    type: Number,
+    default: 1
+  }
 })
 
 userSchema.methods.generateHash = password => {

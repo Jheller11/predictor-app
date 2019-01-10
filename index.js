@@ -15,6 +15,7 @@ const userController = require('./controllers/users')
 const gameController = require('./controllers/games')
 const predictionController = require('./controllers/predictions')
 const adminController = require('./controllers/admin')
+const issueController = require('./controllers/issues')
 
 // middleware config
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -52,6 +53,7 @@ app.use('/users', userController)
 app.use('/games', gameController)
 app.use('/predictions', predictionController)
 app.use('/admin', adminController)
+app.use('/issues', issueController)
 
 app.get('/', (req, res) => {
   res.render('home')

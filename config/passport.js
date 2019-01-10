@@ -88,6 +88,10 @@ module.exports = passport => {
               req.flash('loginMessage', 'Password is not correct.')
             )
           }
+          if (user) {
+            user.count += 1
+            user.save()
+          }
           return done(null, user)
         })
       }

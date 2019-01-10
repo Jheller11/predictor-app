@@ -5,5 +5,6 @@ main {
 }
 
 footer {
-  min-height: 80px;
+  min-height: 60px;
+  background-color: rgba(48, 47, 47, 0.7);
 }
