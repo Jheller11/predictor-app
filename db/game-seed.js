@@ -4,6 +4,7 @@ require('dotenv').config()
 // import game model
 const Game = require('../models/Game')
 
+// fetch games and reload db as games are played and scores are available
 const refreshGames = () => {
   Game.deleteMany({}).then(
     fetch('http://api.football-data.org/v2/competitions/2021/matches', {

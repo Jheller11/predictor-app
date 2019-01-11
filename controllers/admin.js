@@ -17,11 +17,4 @@ router.get('/users', isAdmin, (req, res) => {
   })
 })
 
-// load list of issues
-router.get('/issues', isAdmin, (req, res) => {
-  Issue.find({}).then(issues => {
-    res.render('admin/issues', { issues: issues })
-  })
-})
-
 module.exports = router

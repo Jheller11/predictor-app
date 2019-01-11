@@ -1,3 +1,6 @@
+// Predictions are created by users before a given set of games.
+// Can be viewed, used to generate scores for individual users.
+
 const express = require('express')
 const router = express.Router()
 const isLoggedIn = require('../config/utils').isLoggedIn

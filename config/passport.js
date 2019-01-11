@@ -3,17 +3,16 @@ const User = require('../models/User')
 
 module.exports = passport => {
   passport.serializeUser((user, done) => {
-    console.log('serial')
     done(null, user.id)
   })
 
   passport.deserializeUser((id, done) => {
-    console.log('deserial')
     User.findById(id, (err, user) => {
       done(err, user)
     })
   })
 
+  // local signup strategy with error/warning flash
   passport.use(
     'local-signup',
     new LocalStrategy(
@@ -58,6 +57,7 @@ module.exports = passport => {
       }
     )
   )
+  // local login with error/warning flash
   passport.use(
     'local-login',
     new LocalStrategy(

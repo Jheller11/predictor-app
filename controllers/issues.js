@@ -1,3 +1,7 @@
+// This router controls the issues submitted by users which function as
+// a to do list of fixes for the admin.  Admin can add notes/details when
+// issue is marked as resolved.
+
 const express = require('express')
 const router = express.Router()
 const { isLoggedIn, isAdmin } = require('../config/utils')
@@ -37,6 +41,13 @@ router.get('/:id', isAdmin, (req, res) => {
     .catch(err => {
       res.render('error', { error: err })
     })
+})
+
+// load list of issues
+router.get('/', isAdmin, (req, res) => {
+  Issue.find({}).then(issues => {
+    res.render('issues/index', { issues: issues })
+  })
 })
 
 module.exports = router
