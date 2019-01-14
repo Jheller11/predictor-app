@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const isLoggedIn = require('../config/utils').isLoggedIn
+const { isAdmin, refreshGames } = require('../config/utils')
 const Game = require('../models/Game')
 
+// retrieve a single matchday's games
 router.get('/:matchday', (req, res) => {
   let currentWeek = req.params.matchday
   Game.find({ matchday: currentWeek })
@@ -12,6 +13,11 @@ router.get('/:matchday', (req, res) => {
     .catch(err => {
       res.render('error', { error: err })
     })
+})
+
+router.post('/update', isAdmin, (req, res) => {
+  refreshGames()
+  res.render('admin/dashboard', { message: 'Updated game data successfully.' })
 })
 
 // get weeks list

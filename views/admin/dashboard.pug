@@ -14,7 +14,7 @@ block content
                     a(href='/issues') View Issues
 
             h6.card-subtitle Update Scores:
-            form(method="POST" action='/admin/update_scores')
+            form(method="POST" action='/games/update')
                 .form-group
                     label(for='matchday')  Select Matchday:
                     input.form-control(type="number" name="matchday" required min='1' max='38' value='1')
